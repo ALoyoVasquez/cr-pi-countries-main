@@ -1,0 +1,49 @@
+.container{
+    background-color: rgb(255, 255, 255);
+    /* border: solid 1px;
+    border-color: black; */
+    /* border-radius: %; */
+    /* width: 10rem; */
+}
+
+.container1{
+    /* background-color: rgba(139, 0, 139, 0.596); */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 34rem;
+    margin: 1%;
+}
+
+.flags{
+    margin: 1%;
+    width: 30px;
+}
+
+.labelN{
+    font-size: small;
+    /* width: 5rem; */
+}
+.img{
+    width:35px;
+    font-size: xx-small;
+}
+
+/* .labelS{
+    font-size: smaller;
+    width: 5rem;
+}
+.labelD{
+    font-size: smaller;
+    width: 5rem;
+}
+.label1{
+    font-size: small;
+    width: 5rem;
+} */
+
+.span{
+    font-weight: bold;
+    font-size: small;
+}

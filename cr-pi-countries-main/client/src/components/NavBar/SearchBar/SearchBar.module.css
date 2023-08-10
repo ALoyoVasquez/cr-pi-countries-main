@@ -1,0 +1,7 @@
+.container{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+
+}

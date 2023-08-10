@@ -1,0 +1,120 @@
+.container{
+    /* background-color: #2e37e2; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: row;
+
+  border-radius: 3.23388rem;
+  background: #FAFAFA;
+/* Frame shadow */
+  box-shadow: 40px 34px 94px 0px rgba(30, 40, 68, 0.25);
+}
+
+.detail{
+  width: 30rem;
+  height: 30rem; 
+  /* background-color: #2ee2a997; */
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  align-items: flex-start;
+  /* margin: 1%; */
+}
+  
+.divImg{
+  /* background-color: #e24f2e; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 30rem;  
+  /* box-shadow: #0A2753; */
+}
+
+.imgStyle{
+    margin: 5%;
+    /* width: 30.31738rem;
+    height: 100%; */
+    flex-shrink: 0;
+    border-radius: 1rem 1rem 1rem 1rem;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;   
+    box-shadow: 40px 34px 94px 0px rgba(30, 40, 68, 0.25);
+}
+      
+  .id{
+    color: #0A2753; 
+    font-size: small;
+    text-align: left;
+    margin: 5%;
+  }
+  
+  .name{ /* NOMBRE DEL PAIS*/
+    color: var(--high-emphasized, #081a35);
+    font-family: Montserrat;
+    font-size:40px;
+    /* font-style: normal; */
+    font-weight: 400;
+    line-height: 135%; /* 48.896px */
+    text-align: left;
+    margin: 2%;
+    text-transform: uppercase;
+  }
+  
+  .continent {
+    margin: 5%;
+    color: var(--mid-emphasized, #39414B);
+    font-family: Montserrat;
+    font-size: medium;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 135%; /* 26.194px */
+    text-align: left;
+  }
+
+  .containerButton {
+    margin: 1%;
+    background: #FAFAFA; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Frame shadow */
+    box-shadow: 40px 34px 94px 0px rgba(30, 40, 68, 0.25);
+    padding: 0%;
+  }
+  
+  .button{
+    border-radius: 0.4rem;
+    background: var(--primary, #FF5733);  
+    
+    width: 12rem;
+    height: 2.1rem;
+    flex-shrink: 0;
+    border-color: white;
+    
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  
+  .button:hover {
+    background-color:#e24f2e;
+  }
+  .button:active {
+    position:relative;
+      top:1px;
+  }
+  .container2:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }

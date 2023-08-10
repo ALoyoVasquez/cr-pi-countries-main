@@ -1,0 +1,28 @@
+1 ID (Código de tres letras). *
+2 Nombre. *
+3 Imagen de la bandera. *
+4 Continente. *
+5 Capital. *
+6 Subregión.
+7 Área.
+8 Población. *
+
+SQL INSERT ---------------
+------------------
+ INSERT INTO "Countries" 
+(id, name, flags, continent, capital, subregion, area, population) 
+VALUES ('KEN', 'Kenya','https://flagcdn.com/w320/ke.png','Africa',
+'Nairobi', 'Eastern Africa', 580367, 53771300)
+
+VALUES ('VEN', 'VENEZUELA','https://flagcdn.com/w320/ke.png','America',
+'Caracas', 'South America', 580367, 53771300)
+
+VALUES ('ARG', 'Argentina','https://flagcdn.com/w320/ke.png','America',
+'Buenos Aires', 'South America', 580367, 53771300)
+
+(id, name, flags, continent, capital, subregion, area, population) 
+VALUES ('BRA', 'Brazil','https://flagcdn.com/w320/ke.png','America',
+'Brazilia', 'South America', 580367, 53771300)
+
+VALUES ('COL', 'Colombia','https://flagcdn.com/w320/ke.png','America',
+'Bogota', 'South America', 580367, 53771300)

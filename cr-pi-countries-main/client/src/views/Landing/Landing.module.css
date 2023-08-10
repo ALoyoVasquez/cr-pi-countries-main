@@ -1,0 +1,50 @@
+.container{
+    background-image: url(../../assets/landing.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed    ;
+    background-size: cover;
+    background-color: #999;
+    height: 760px;
+    visibility: visible;
+}
+
+/* .button{
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    right: 40%;
+} */
+
+.myButton {
+    /* POSICION; */
+    position: absolute;
+    margin-right: 45%;
+    margin-left: 45%;
+    bottom: 10%;
+    /* POSICION; */
+
+    border-radius: 0.4rem;
+    background: var(--primary, #FF5733);  
+
+    width: 12rem;
+    height: 2.1rem;
+    flex-shrink: 0;
+    border-color: white;
+
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 400;
+}
+        
+        
+.myButton:hover {
+    background-color:#e24f2e;
+}
+/* .myButton:active {
+    position:relative;
+    top:1px;
+} */
+
