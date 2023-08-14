@@ -22,7 +22,7 @@ Al Iniciar carga:
 
 ### 1. Landing Page
  Esta contiene una imagen referente al proyecto y un botón de “Enter” para acceder al home.
-
+![Landing](./imgs/landing.png)
 
 Luego de acceder al Home podrás ver:
 
