@@ -8,7 +8,7 @@ Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos 
 
 ## DIGRAMA DE FUNCIONAMIENTO DEL BACK
 
-![DiagramBack](./imgs/diagramBack.svg)
+![DiagramBack](./imgs/diagramback.svg)
 
 
 ## DIAGRAMA DE FUNCIONAMIENTO DEL FRONT
