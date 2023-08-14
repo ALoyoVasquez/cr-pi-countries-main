@@ -3,7 +3,7 @@ import { useState } from "react";
 import style from "./Form.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCountries, postActivity, getCountryById, getAllActivities } from "../../redux/actions";
+import { getAllCountries, postActivity, getAllActivities, orderByName } from "../../redux/actions";
 import CardActivity from "../../components/CardActivity/CardActivity";
 
 const Form = () => {
@@ -27,10 +27,6 @@ const Form = () => {
     countries: [],
   });
 
-
-
-
-
   const handleChange2=(e)=> {
     var options = e.target.options;
     var value = [];
@@ -43,14 +39,9 @@ const Form = () => {
     return setForm({ ...form, ["countries"]: value });
   }
 
-
-
-
-
-
-
-
-
+  const ordenar = ()=>{
+    dispatch(orderByName('az'));
+  }
 
   const changeHandler = (event) => {
     const property = event.target.name;
@@ -75,9 +66,8 @@ const Form = () => {
     // form.countries=[form.countries]
     console.log(form)
 
-    event.preventDefault();
+    // event.preventDefault();
     dispatch(postActivity(form))
-    // window.location.reload(true);
   };
 
 
@@ -131,6 +121,7 @@ const Form = () => {
                 <select id="countries" name="countries" onChange={handleChange2} className={style.select1}
                 multiple required>
                   {/* <option value="">--Please choose an option--</option> */}
+                  {ordenar()}
                   {countries.map((country) => {
                     return (<option key={country.id} value={country.idCountry}>{" "} {country.name} </option> );
                   })}
@@ -142,7 +133,7 @@ const Form = () => {
           </div>
           <div>
             <hr />
-            <div> <button type="submit">Create!</button> </div>
+            <div> <button type="submit" className={style.button}>Create!</button> </div>
           </div>
         </form>
       </div>

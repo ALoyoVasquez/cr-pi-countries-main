@@ -4,44 +4,26 @@ const CardActivity = ({ id, name, season,  duration, difficulty, countries, pais
 
     let banderas=[];
 
-    //   console.log("BANDERA: " + pais[0]);
     for (let i = 0; i < countries.length; i++) {
         banderas.push(countries[i].flags)
     }
 
-
-    // console.log(banderas) 
-    // console.log(Array.isArray(pais)) 
-    countries 
-    ? countries 
-    : (countries = banderas);
-
-
-    let st="";
-
-    // banderas.length > 1
-    // ? banderas.map((band)=>{
-    //     st = band;
-    //     console.log(st) 
-    // } )
-    // : console.log("Banderas es menor")
+    countries ? countries : (countries = banderas);
 
   return (
     <div className={style.container}>
       {name ? (
         <div className={style.container1}>
           <div className={style.flag}>
-            {/* {console.log(Array.isArray(countries))} */}
             {
-                banderas.length > 1
-                ? (banderas.map((band)=>{ 
-                    console.log(band);
-                    <img src={band} alt={band} className={style.img} />}) 
-                    // console.log(band)})
-                    )
-                    : <img src={countries[0].flags} alt={countries} className={style.img} />
-            }
-                    {/* <img src={banderas} alt={banderas} className={style.img} />})  */}
+              banderas.length > 1
+              ?  (banderas.map((band)=>{
+                <h1>{pais}</h1>
+                 {console.log(pais)}
+                //{<img src={band} alt="img" key={band} className={style.img} />} 
+                 }) )
+              : <img src={countries[0].flags} alt={countries} className={style.img} />
+            }       
           </div>
           <div>
             <span className={style.span}>| NAME: </span>{" "}

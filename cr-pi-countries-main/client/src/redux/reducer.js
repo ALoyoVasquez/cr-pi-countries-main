@@ -5,7 +5,7 @@ import { ORDER_BY_NAME, ORDER_BY_POPULATION } from "./actions";
 const initialstate = {
   countries: [],
   activities: [],
-  order: 'az',
+  order: 'za',
   allCountries: [],
   allActivities: [],
 };
@@ -38,9 +38,6 @@ const rootReducer = (state = initialstate, action) => {
       return { ...state, countries: continentFiltered }
 
     case FILTER_ACTIVITY:
-      // const activities = state.activities
-      // const countries = state.countries
-      // console.log("Action. "+action.payload)
       let activityFiltered = 
             action.payload !== 'all' 
             ? state.allActivities.filter(activity => activity.name === action.payload) 
@@ -58,19 +55,24 @@ const rootReducer = (state = initialstate, action) => {
     //? ORDER BY NAME & POPULATION
     case ORDER_BY_NAME: {
       action.payload === 'az'
-       ? state.countries.sort(function (a, b) { 
-          if (a.name > b.name) return 1 
-          if (b.name > a.name) return -1
-            return 0 
-          }) 
-	    :  action.payload === 'za'
-      ? state.countries.sort(function (a, b) {
-        if (a.name > b.name) { return -1}
-        if (b.name > a.name) { return 1 }
+      ? state.countries.sort(function (a, b) { 
+        if (a.name > b.name) return 1 
+        if (b.name > a.name) return -1
+        return 0 
+      }) 
+	    : action.payload === 'za'
+        ? state.countries.sort(function (a, b) {
+          if (a.name > b.name) { return -1}
+          if (b.name > a.name) { return 1 }
           return 0
         })
-
-      return {...state, order: action.payload  }
+        : {...state}
+      
+      // console.log("Fin en order by name "+action.payload)
+      // console.log(state.countries)
+      
+      // return {...state, order: action.payload  }
+      return {...state, countries: state.countries  }
     }
     
     case ORDER_BY_POPULATION:{

@@ -6,7 +6,7 @@ import axios from "axios";
 import style from "./Detail.module.css";
 import formatNumber from "../formatNumber";
 
-const Detail = () => {
+const Detail = (state) => {
   
   const { idCountry } = useParams();
   const navigate = useNavigate();
@@ -21,6 +21,16 @@ const Detail = () => {
     });
     return setCountries({});
   }, [idCountry]);
+
+  const onClose = (idCountry) => {
+    console.log("entro en el close")
+    console.log(countries);
+    setCountries(
+      countries.filter((countrys) => {
+        return countrys.idCountry !== idCountry;
+      })
+    );
+  };
 
   return (
     <>
@@ -61,10 +71,15 @@ const Detail = () => {
     </div>
     <div className={style.containerButton}>
       <button className={style.button} 
-      onClick={(event)=>{
-          event.preventDefault();
-          navigate("/home");
-      }}> Back </button>
+          onClick={ 
+                    ()=>{
+                      navigate(-1);
+
+                      console.log(state);
+              // event.preventDefault();
+      }
+      }
+      > Back </button>
     </div>
   </>
   );

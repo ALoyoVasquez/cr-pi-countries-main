@@ -30,20 +30,45 @@
     font-size: xx-small;
 }
 
-/* .labelS{
-    font-size: smaller;
-    width: 5rem;
-}
-.labelD{
-    font-size: smaller;
-    width: 5rem;
-}
-.label1{
-    font-size: small;
-    width: 5rem;
-} */
-
 .span{
     font-weight: bold;
     font-size: small;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    /* .container{
+        width: 95%;
+    } */
+
+    .container1{
+        background-color: rgb(255, 255, 255);
+        display:flex;
+        flex-wrap: wrap ;
+        justify-content: center;
+        align-items: center;
+        /* justify-content: left; */
+        /* align-items: center; */
+        width: 100%;
+        margin: 1% 0% 0% 5%;
+    }
+
+    .flags{
+        margin: 1%;
+        width: 28px;
+    }
+    
+    .labelN{
+        font-size: x-small;
+        /* width: 5rem; */
+    }
+    .img{
+        width:30px;
+        font-size: xx-small;
+    }
+    
+    .span{
+        font-weight: bold;
+        font-size: x-small;
+    }
 }

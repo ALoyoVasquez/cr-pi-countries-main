@@ -15,6 +15,9 @@
   flex-shrink: 0;
   border-radius: 10% 10% 10% 10%;
   background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+  /* Frame shadow */
+  box-shadow: 1px 20px 7px 1px rgba(0, 0, 0, 0.15);
+  padding: 0%;
 }
     
 .id{
@@ -29,7 +32,7 @@
   font-family: Montserrat;
   font-size: large;
   font-style: normal;
-  font-weight: 350;
+  font-weight: 400;
   line-height: 135%; /* 48.896px */
   text-align: left;
   margin: 2%;
@@ -39,7 +42,7 @@
   font-family: Montserrat;
   font-size: medium;
   font-style: normal;
-  font-weight: 350;
+  font-weight: 400;
   line-height: 135%; /* 48.896px */
   text-align: left;
   margin: 2%;
@@ -89,3 +92,4 @@
   transform: scale(1.1);
   cursor: pointer;
 }
+

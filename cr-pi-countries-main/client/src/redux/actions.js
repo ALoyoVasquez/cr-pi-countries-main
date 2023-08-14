@@ -71,7 +71,7 @@ export const orderByPopulation = (ordenP) => {
   return { type: ORDER_BY_POPULATION, payload: ordenP };
 };
 
-export const orderByName = (orden) => {
-  return { type: ORDER_BY_NAME, payload: orden };
+export const orderByName = (order) => {
+  return { type: ORDER_BY_NAME, payload: order };
 };
 

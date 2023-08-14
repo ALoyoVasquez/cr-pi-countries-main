@@ -1,5 +1,5 @@
 .container{
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,4 +32,58 @@
 
 .h2{
     text-transform: uppercase;
+}
+
+.img{
+    width:28%;
+}
+  
+@media only screen and (max-width: 1024px) {
+    .container{
+        /* background-color: rsgb(3, 255, 255); */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* margin: 2%;   */
+    }
+
+    .containerG{
+        /* background-color: rgb(201, 19, 19); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 1%;
+        border: 1px solid;
+        border-color: rgba(128, 128, 128, 0.5);
+        border-radius: 1%;
+    }
+
+    .container2{
+        background-color: rgb(255, 255, 255);
+        margin: 4%;
+        width: 90%;
+        font-size: small;
+    }
+    .container3{
+        width: 90%;
+        /* background-color: rgb(1s1, 202, 11); */
+        font-size: small;
+        margin: 4%;
+    }
+    
+    .container4{
+        width: 90%;
+        font-size: small;
+        background-color: rgb(255, 255, 255);
+        margin: 4%;
+    }
+    
+    .h2{
+        text-transform: uppercase;
+    }
+    .img{
+        width:50%;
+    }
 }

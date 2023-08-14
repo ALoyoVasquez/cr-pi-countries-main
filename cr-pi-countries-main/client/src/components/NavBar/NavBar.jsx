@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { FaBars, FaTimes, FaGlobeAmericas } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar";
 import "./NavBar.css";
@@ -13,24 +12,20 @@ const NavBar = () => {
 
   return (
     <header>
-      <h3>&nbsp;</h3>
-      <h3>
-        <FaGlobeAmericas />
-        &nbsp;
-      </h3>
+      <div className="head">
+        <img src="/src/assets/globe_icon_w.svg" alt="globe-icon" height="28px"/>
+        <h1>  _ Countries _ </h1>
+      </div>
       <nav ref={navRef}>
         <Link to="/home">HOME</Link>
         <Link to="/activities">ACTIVITY</Link>
         <Link to="/about">ABOUT ME</Link> 
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
-          <FaTimes />
+          <img src="/src/assets/times-icon.png" alt="times-icon" height="28px"/>
         </button>
       </nav>
-      <h3>
-        {/* <SearchBar /> */}
-      </h3>
       <button className="nav-btn" onClick={showNavBar}>
-        <FaBars />
+        <img src="/src/assets/bars.png" alt="bars-icon" height="28px"/>
       </button>
       <SearchBar />
     </header>

@@ -11,6 +11,8 @@ function Ubicacion(props) {
   //  <Nav onSearch={props.onSearch} logOut={props.logOut} />;
 }
 
+
+
 function App() {
   return (
     <div className="App">
