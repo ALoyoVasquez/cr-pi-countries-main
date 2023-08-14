@@ -79,7 +79,7 @@ const Detail = (state) => {
               // event.preventDefault();
       }
       }
-      > Back </button>
+      > Go Home </button>
     </div>
   </>
   );
