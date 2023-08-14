@@ -7,11 +7,12 @@ Se creo una SPA para trabajar con Países y Actividades de acuerdo al País, la 
 Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos con la DB y así obtener todos los datos como también crear actividades.
 
 ## DIGRAMA DE FUNCIONAMIENTO DEL BACK
+
 ![DiagramBack](/imgs/diagramBack.svg)
 
 
 ## DIAGRAMA DE FUNCIONAMIENTO DEL FRONT
-![DiagramFront](/imgs/diagramFront.svg)
+![DiagramFront]([/imgs/diagramFront.svg](https://github.com/ALoyoVasquez/cr-pi-countries-main/blob/main/cr-pi-countries-main/imgs/diagramFront.svg)
 
 Acá podemos ver el flujo de como funciona la SPA de Countries.
 
