@@ -17,7 +17,7 @@ Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos 
 Acá podemos ver el flujo de como funciona la SPA de Countries.
 
 ## INSTRUCCIONES:
-La SPA corre en http://localhost:3001/
+La SPA corre en http://localhost:3000/
 Al Iniciar carga:
 
 ### 1. Landing Page
@@ -36,7 +36,7 @@ Además, contiene 3 links principales:
 * **ABOUT ME** → Contiene una breve descripción de mi.
 
 ### HOME
-Al Entrar ingresa automáticamente el http://localhost:3001/home en esta vista podemos ver las tarjetas de todos los Países paginadas de 10 en 10.
+Al Entrar ingresa automáticamente el http://localhost:3000/home en esta vista podemos ver las tarjetas de todos los Países paginadas de 10 en 10.
 
 ![Cards](./imgs/cards.png)
 
