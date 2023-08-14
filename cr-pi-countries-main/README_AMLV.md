@@ -12,7 +12,7 @@ Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos 
 
 
 ## DIAGRAMA DE FUNCIONAMIENTO DEL FRONT
-![DiagramFront]([/imgs/diagramFront.svg](https://github.com/ALoyoVasquez/cr-pi-countries-main/blob/main/cr-pi-countries-main/imgs/diagramFront.svg)
+![DiagramFront]([/imgs/diagramFront.svg](https://github.com/ALoyoVasquez/cr-pi-countries-main/blob/main/cr-pi-countries-main/imgs/diagramFront.svg))
 
 Acá podemos ver el flujo de como funciona la SPA de Countries.
 
