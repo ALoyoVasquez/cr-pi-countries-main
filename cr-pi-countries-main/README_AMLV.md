@@ -8,7 +8,7 @@ Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos 
 
 ## DIGRAMA DE FUNCIONAMIENTO DEL BACK
 
-![DiagramBack](/imgs/diagramBack.svg)
+![DiagramBack](./imgs/diagramBack.svg)
 
 
 ## DIAGRAMA DE FUNCIONAMIENTO DEL FRONT
@@ -38,25 +38,25 @@ Además, contiene 3 links principales:
 ### HOME
 Al Entrar ingresa automáticamente el http://localhost:3001/home en esta vista podemos ver las tarjetas de todos los Países paginadas de 10 en 10.
 
-![Cards](/imgs/cards.png)
+![Cards](./imgs/cards.png)
 
 Cada Tarjeta contiene la siguiente información:
 
 
-![Card](/imgs/card.svg)
+![Card](./imgs/card.svg)
 
 
 Al Hacer Clic en el botón **MORE INFO**, puedes acceder a la Información Detallada de cada País.
 
-![DetalleCard](/imgs/details.svg)
+![DetalleCard](./imgs/details.svg)
 
 
-Para volver al **Home**, basta con hacer clic en el Botón _“Back”_ o en el link _“Home”_.
+Para volver al **Home**, basta con hacer clic en el Botón _“Go Home”_ o en el link _“Home”_.
 Dentro del home en la parte superior tendrás disponible las opciones para manejar la forma de ordenar y filtrar las tarjetas.
 Barra de Filtros y Ordenamiento
 
 ## FILTROS:
-![FiltrosOrden](/imgs/filtersOrden.png)
+![FiltrosOrden](./imgs/filtersOrden.png)
 ### Filtrar por Actividad:
  Te mostrará todas las actividades creadas, y al ser seleccionada te mostrará los países asociados a esa actividad.
 
@@ -64,7 +64,7 @@ Barra de Filtros y Ordenamiento
 Te mostrará como opción los continentes de los países, y al hacer clic en él te mostrará solo los países pertenecientes a dicho continente, también puedes hacer clic en All y te mostrará todos los países.
 
 ## ORDEN:
-![FiltrosOrden](/imgs/filtersOrden.png)
+![FiltrosOrden](./imgs/filtersOrden.png)
 ### Ordenar Alfabéticamente: 
 Ordenará las tarjetas para ser mostradas de forma alfabética de la AZ o ZA según el nombre del País.
 ### Ordenar por Población: 
@@ -98,7 +98,7 @@ Te mostrará un Form.
 
 Aquí muestra todas las actividades que fueron creadas ordenadas por id.
 
-![TodasLasActividades](/imgs/activities.png)
+![TodasLasActividades](./imgs/activities.png)
 
 Por cada actividad se muestra la bandera correspondiente al País, Nombre de la actividad, Temporada, Duración y Dificultad.
 
