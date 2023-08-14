@@ -1,4 +1,5 @@
 import style from "./CardActivity.module.css";
+import loadImg from "../../assets/loading.gif"
 
 const CardActivity = ({ id, name, season,  duration, difficulty, countries, pais }) => {
 
@@ -19,7 +20,7 @@ const CardActivity = ({ id, name, season,  duration, difficulty, countries, pais
               banderas.length > 1
               ?  (banderas.map((band)=>{
                 <h1>{pais}</h1>
-                 {console.log(pais)}
+                //  {console.log(pais)}
                 //{<img src={band} alt="img" key={band} className={style.img} />} 
                  }) )
               : <img src={countries[0].flags} alt={countries} className={style.img} />
@@ -34,10 +35,11 @@ const CardActivity = ({ id, name, season,  duration, difficulty, countries, pais
             <label className={style.labelN}> {duration}hrs</label>
             <span className={style.span}>| DIFFICULTY: </span>
             <label className={style.labelN}> {difficulty}</label>
+          {/* <h3><img src={loadImg} alt="loading..." /></h3> */}
           </div>
         </div>
       ) : (
-        <h3>Loading...</h3>
+        <h3><img src={loadImg} alt="loading..." /></h3>
       )}
       <hr />
     </div>

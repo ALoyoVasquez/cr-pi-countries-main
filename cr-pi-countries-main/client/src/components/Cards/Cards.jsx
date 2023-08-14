@@ -4,24 +4,17 @@ import Card from "../Card/Card";
 import style from "./Cards.module.css";
 import { orderByName, orderByPopulation } from "../../redux/actions";
 import sortImg from "../../assets/sort_az2.png"
-//? Icons pagination
-import prev from "../../assets/arrow_left.svg"
-import next from "../../assets/arrow_right.svg"
-import start from "../../assets/icon-start.svg"
-import last from "../../assets/icon-last.svg"
 
 
 const Cards = () => {
   //? Estado
-  // const countries = useState(countries);
   const countries = useSelector((state) => state.countries);
+
   //? Order
   const [order, setOrder] = useState(false);
   const dispatch = useDispatch();
 
-  // console.log(`Antes del  paginado `)
-  // console.log(countries)
-  ////////////////////////? Paginado
+  //? Paginado
   const [currentPage, setCurrentPage] = useState(0);
   let data = countries;
   const itemsPerPage = 10;
@@ -31,33 +24,37 @@ const Cards = () => {
 
   const handleMoveLeft = (evt) => {
     data = countries;
-    setCurrentPage(currentPage - 1);
+
+    setCurrentPage(currentPage - 1);    
     startIndex = currentPage * itemsPerPage;
     selectedCountries = data.slice(startIndex, startIndex - itemsPerPage);
+    
     return selectedCountries;
   };
-
+  
   const handleMoveRight = (evt) => {
     data = countries;
+   
     setCurrentPage(currentPage + 1);
     startIndex = currentPage * itemsPerPage;
     selectedCountries = data.slice(startIndex, startIndex + itemsPerPage);
-
+   
     return selectedCountries;
   };
-
-
+  
+  
   const handleMoveGo = (event) => {
-    console.log(event.target.value)
-    let n=parseInt(event.target.value)
+    
     data = countries;
+    
+    let n = parseInt(event.target.value)
+    
     setCurrentPage(n);
     startIndex = currentPage * itemsPerPage;
     selectedCountries = data.slice(startIndex, startIndex + itemsPerPage);
-
     return selectedCountries;
   };
-  ////////////////////////?
+  //?Fin Paginado
 
   //? Order
   const handleOrderP = (e) => {
@@ -118,8 +115,8 @@ const Cards = () => {
                   : ( <button onClick={handleMoveRight} id="next" name="next" className={style.button} disabled> {"> "}{currentPage+2}</button>)
                 }
                 { currentPage < pageCount - 1 
-                  ? <button onClick={handleMoveGo} value="24" id="ultima" name="ultima" className={style.button2}>last </button> 
-                  : <button onClick={handleMoveGo} value="24" id="ultima" name="ultima" className={style.button2} disabled>last</button>
+                  ? <button onClick={handleMoveGo} value={pageCount-1} id="ultima" name="ultima" className={style.button2}>last </button> 
+                  : <button onClick={handleMoveGo} value={pageCount-1}   id="ultima" name="ultima" className={style.button2} disabled>last</button>
                 }
               </h2>
             </div>

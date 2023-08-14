@@ -24,25 +24,6 @@ const Home = () => {
     dispatch(getAllActivities());
   }, []);
 
-  // //Order by Name
-  // const handleOrderN = (e) => {
-  //   dispatch(orderByName(e.target.value));
-  
-
-  //   console.log(order)
-  //   if (!order) setOrder(true);
-  //   else setOrder(false);
-  //   console.log(order)
-  // };
-
-  // //Order By Population
-  // const handleOrderP = (e) => {
-  //   dispatch(orderByPopulation(e.target.value));
-    
-  //   if (aux) setAux(true);
-  //   else setAux(false);
-  // };
-
   const handleFilterByContinent = (event) => {
     dispatch(filterCountryByContinent(event.target.value));
     if (aux) setAux(true);
@@ -56,18 +37,11 @@ const Home = () => {
     else setAux(false);
   };
 
-
-
   return (
     <div className={style.container}>
       <div className={style.containFO}>
         <img src={filterImg} alt="filter-icon" height="32px" />
         &nbsp;&nbsp;&nbsp;
-        {/* <span className={style.h4}> FILTER →</span> */}
-        {/* <img src={filterImg} alt="filter-icon" className = {style.icono} /> */}
-
-            {/* <label htmlFor="select" className={style.h4}> FILTER→{" "} </label>
-            <label htmlFor="select" className={style.h5}> FILTER→{" "} </label> */}
 
           <div className={style.filter}>
             <label htmlFor="select" className={style.h4}> ACTIVITY </label>
