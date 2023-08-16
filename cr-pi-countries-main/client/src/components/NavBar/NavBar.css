@@ -64,7 +64,7 @@
     width: max-content;
   }
   
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 767px) {
     header .nav-btn{
       visibility: visible;
       opacity: 1;

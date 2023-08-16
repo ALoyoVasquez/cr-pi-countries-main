@@ -118,3 +118,38 @@
     transform: scale(1.1);
     cursor: pointer;
   }
+
+
+   
+@media only screen and (max-width: 767px) {
+
+  /* .container{
+    background-color: #2e37e2;
+} */
+
+  .container2 {
+    flex-direction: column;
+    justify-content: center;
+    width:95%;
+    border-radius: 2rem;
+  }
+
+  .detail{
+    align-items: center;
+    margin: 1%;
+    width: 99%;
+  }
+
+  .divImg{
+    width: 99%;
+    height: auto;
+  }
+
+  .imgStyle{
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;   
+    flex-shrink: 0;
+    border-radius: 1rem 1rem 1rem 1rem;
+    box-shadow: 40px 34px 94px 0px rgba(30, 40, 68, 0.25);
+}
+
+}

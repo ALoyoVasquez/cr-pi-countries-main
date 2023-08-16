@@ -12,20 +12,24 @@ const Home = () => {
   // const countries = useSelector((state) => state.countries);
   const activities = useSelector((state) => state.activities);
   const [aux, setAux] = useState(false);
-  const [order, setOrder] = useState(false) 
+  const [continente, setContinente] = useState("all") 
 
   //? Dispatch al cargar--- Llena todos los paises
   useEffect(() => {
     dispatch(getAllCountries());
-  }, [order, aux, dispatch]);
+  }, [aux, dispatch]);
 
   // //? Cargar las actividades en el Select
   useEffect(() => {
     dispatch(getAllActivities());
   }, []);
 
+  // let continente="";
+
   const handleFilterByContinent = (event) => {
     dispatch(filterCountryByContinent(event.target.value));
+    setContinente(event.target.value);
+    console.log(event.target.value);
     if (aux) setAux(true);
     else setAux(false);
   };
@@ -71,7 +75,13 @@ const Home = () => {
             </select>
           </div>
       </div>
-      <Cards />
+
+      <div className={style.containeP}>
+            <div>
+              <Cards value={continente} />
+              {/* {console.log(Cards[0])} */}
+            </div>
+      </div>              
     </div>
   );
 };

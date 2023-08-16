@@ -50,8 +50,16 @@
     visibility: hidden;
     height: 32px;
   }
+
   
-@media only screen and (max-width: 1024px) {
+  .containeP{
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+@media only screen and (max-width: 767px) {
 
     .container{
       display: flex;
@@ -76,15 +84,15 @@
     .filter{
       /* background-color: rgba(255, 145, 0, 0.767); */
       /* width: 80%; */
-      display: flex;
-      justify-content: space-between;
+      /* display: flex; */
+      justify-content: center;
       align-items: center;
       margin: 1%;
       height: fit-content;
     }
   
     .select{
-      width: 5.5rem;
+      width: 4rem;
       height: 1.5rem;
       font-size: x-small;
     }
@@ -97,7 +105,7 @@
 
     .icono{
       visibility: visible;
-      height: 32px;
+      height: 28px;
     }
   }
 

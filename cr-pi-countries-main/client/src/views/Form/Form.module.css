@@ -111,21 +111,22 @@
     color: #666666;
   }
   
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 767px) {
 
   .container{
     /* background-color: rgb(255, 0, 0); */
-    width: 90%;
+    width: 98%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0.5%;
     }
 
     .container2{
         /* background-color: rgb(221, 255, 0); */
         width: 90%;
-        margin: 5%;
+        margin: 2%;
         border: 1px solid;
         border-color: #999999;
         border-radius: 1%;

@@ -1,11 +1,29 @@
 .container{
   background: url("../../assets/fondo.png") ;
+  /* background-color: #e24f2e; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 0;
   margin: 2%;  
+}
+
+
+.continen{
+  /* background-color: aqua; */
+  width: 250px;
+  margin: 0.5%;
+}
+
+.info{
+  position: absolute;
+  top: 70%;
+  /* bottom: 30%; */
+  width: 240px;
+  /* margin: 1%; */
+  font-size: x-large;
+  /* font-weight: bold; */
 }
 
 .containFo{
@@ -17,6 +35,13 @@
   justify-content: center;
   height: fit-content;
   padding: 0%;
+}
+
+
+.containeP{
+  /* background-color: rgb(43, 214, 226); */
+  display: flex;
+  flex-direction: row;
 }
 
 .order{
@@ -124,7 +149,7 @@ button[disabled]{
 }
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 767px) {
 
   .container{
     background-color: rgba(128, 128, 128, 0.050);
@@ -150,16 +175,11 @@ button[disabled]{
   
   .order{
     /* background-color: rgba(255, 145, 0, 0.767); */
-    /* width: 80%; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1%;
     height: fit-content;
   }
 
   .select{
-    width: 5.5rem;
+    width: 4rem;
     height: 1.5rem;
     font-size: x-small;
   }
@@ -171,6 +191,6 @@ button[disabled]{
   }
   .icono{
     visibility: visible;
-    height: 32px;
+    height: 28px;
   }
 }

@@ -37,9 +37,9 @@
 
 @media only screen and (max-width: 1024px) {
 
-    /* .container{
+    .container{
         width: 95%;
-    } */
+    }
 
     .container1{
         background-color: rgb(255, 255, 255);
@@ -49,7 +49,7 @@
         align-items: center;
         /* justify-content: left; */
         /* align-items: center; */
-        width: 100%;
+        width: 99%;
         margin: 1% 0% 0% 5%;
     }
 

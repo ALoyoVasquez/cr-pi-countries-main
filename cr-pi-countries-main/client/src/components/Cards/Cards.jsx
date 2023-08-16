@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "../Card/Card";
+import formatNumber from "../../views/formatNumber.js"
 import style from "./Cards.module.css";
 import { orderByName, orderByPopulation } from "../../redux/actions";
 import sortImg from "../../assets/sort_az2.png"
+import s_america from "../../assets/southAmerica.jpg"
+import n_america from "../../assets/northAmerica.jpg"
+import europe from "../../assets/europe.jpg"
+import asia from "../../assets/asia.jpg"
+import oceania from "../../assets/oceania.jpg"
+import africa from "../../assets/africa.jpg"
+import antartica from "../../assets/antarctica.png"
 
-
-const Cards = () => {
+const Cards = (continente) => {
   //? Estado
   const countries = useSelector((state) => state.countries);
 
@@ -21,6 +28,11 @@ const Cards = () => {
   const pageCount = Math.ceil(data.length / itemsPerPage); //? Calcula la cantidad de paginas de acuerdo al numero de paises
   let startIndex = currentPage * itemsPerPage;
   let selectedCountries = data.slice(startIndex, startIndex + itemsPerPage);
+
+
+  let totalPeople=0;
+  let totalArea=0;
+  // let continente="all";
 
   const handleMoveLeft = (evt) => {
     data = countries;
@@ -46,9 +58,7 @@ const Cards = () => {
   const handleMoveGo = (event) => {
     
     data = countries;
-    
     let n = parseInt(event.target.value)
-    
     setCurrentPage(n);
     startIndex = currentPage * itemsPerPage;
     selectedCountries = data.slice(startIndex, startIndex + itemsPerPage);
@@ -99,6 +109,7 @@ const Cards = () => {
           </div>
         </div>
       </div>
+      {/* //? Paginado */}
             <div>
               <h2>
                 { currentPage > 0 
@@ -120,21 +131,61 @@ const Cards = () => {
                 }
               </h2>
             </div>
+          {/* //? End-Paginado */}
 
-      <div className={style.container}>
-        {selectedCountries.map((country) => {
-          return (
-            <Card
-              key={country.id}
-              id={country.id}
-              flags={country.flags}
-              idCountry={country.idCountry}
-              name={country.name}
-              continent={country.continent}
-            />
-          );
-        })}
-      </div>
+    
+
+          <div className={style.containeP}>
+
+            {countries.map((popul)=>{
+              totalPeople=totalPeople+popul.population
+              totalArea = totalArea+popul.area
+              })
+            }
+            {/* {console.log(continente)}
+              {console.log(continente.value)} */}
+
+            { continente.value ==="all" 
+            ? console.log("no muestra nada")
+            : (<div className={style.continen} >
+                  <span className={style.info}> 
+                  This is one of the 7 continents of the world.
+                  <br /> It has {countries.length} countries and its total population reaches {formatNumber(totalPeople)} inhabitants.
+                    <br />It also covers an area of {formatNumber(totalArea )} km2
+                  </span>
+                  { continente.value==="South America"
+                    ? <img src={s_america} alt="southAmerica" width="250px" />
+                    : continente.value==="North America"
+                    ? <img src={n_america} alt="northAmerica" /> 
+                    : continente.value === "Africa"
+                    ? <img src={africa} alt="Africa" />
+                    : continente.value === "Europe"
+                    ? <img src={europe} alt="Europe" />
+                    : continente.value === "Antarctica"
+                    ? <img src={antartica} alt="Antarctica" />
+                    : continente.value === "Asia"
+                    ? <img src={asia} alt="Asia" />
+                    : <img src={oceania} alt="oceania" /> 
+                    // : console.log("nin")
+                  }   
+                </div>)
+              }
+
+            <div className={style.container}>
+              {selectedCountries.map((country) => {
+                return (
+                  <Card
+                    key={country.id}
+                    id={country.id}
+                    flags={country.flags}
+                    idCountry={country.idCountry}
+                    name={country.name}
+                    continent={country.continent}
+                  />
+                );
+              })}
+            </div>
+          </div>
     </>
   );
 };
