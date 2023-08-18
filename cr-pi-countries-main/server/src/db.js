@@ -36,7 +36,6 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Country, Activity } = sequelize.models;
 
 // Aca vendrian las relaciones
-// Product.hasMany(Reviews);
 
 CountryFunction(sequelize);
 ActivityFunction(sequelize);

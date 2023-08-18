@@ -8,14 +8,12 @@ function Ubicacion(props) {
 
   if (location.pathname !== "/") 
   return <NavBar />;
-  //  <Nav onSearch={props.onSearch} logOut={props.logOut} />;
 }
-
-
 
 function App() {
   return (
-    <div className="App">
+    <>
+    <div className="App" bgcolor="#F70707">
       <Ubicacion />
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -27,6 +25,7 @@ function App() {
         <Route path="*" element={<Navigate to="/error" replace />} />
       </Routes>
     </div>
+    </>
   );
 }
 

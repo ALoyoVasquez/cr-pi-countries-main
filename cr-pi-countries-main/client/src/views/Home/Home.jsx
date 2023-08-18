@@ -77,7 +77,7 @@ const Home = () => {
       </div>
 
       <div className={style.containeP}>
-            <div>
+            <div className={style.tarjeta}>
               <Cards value={continente} />
               {/* {console.log(Cards[0])} */}
             </div>

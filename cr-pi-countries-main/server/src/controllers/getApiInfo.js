@@ -1,6 +1,3 @@
-// const express = require('express');
-// const path = require('path')
-// const router = express.Router();
 const { Country } = require('../db.js');
 const axios = require('axios');
   
@@ -16,7 +13,7 @@ const getApi = async () => {
         name: country.name.common,
         flags: country.flags.png,
         continent: country.continents[0],
-        capital: country.capital ? country.capital[0] : "Este País no tiene una Capital",      //si el pais no tiene capital, le asigno "not found"
+        capital: country.capital ? country.capital[0] : "Este País no tiene una Capital",      //si el pais no tiene capital, Este País no tiene una Capital"
         subregion: country.subregion ? country.subregion : "No aparece la Región",
         area: country.area,
         population: country.population,
@@ -25,7 +22,7 @@ const getApi = async () => {
     
     await Promise.all(countries.map(country => Country.create(country)));
   } catch (error) { 
-    console.log( {error:error.message});
+    console.log( { error : error.message});
   }
 }
 

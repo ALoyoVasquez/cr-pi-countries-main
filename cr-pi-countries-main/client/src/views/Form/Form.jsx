@@ -19,7 +19,7 @@ const Form = () => {
     countries: [],
   });
 
-  const [errors, setErrors] = useState({
+  const [errores, setErrores] = useState({
     name: "",
     difficulty: "",
     duration:"",
@@ -35,7 +35,7 @@ const Form = () => {
         value.push(options[i].value);
       }
     }
-    console.log(value);
+    // console.log(value);
     return setForm({ ...form, ["countries"]: value });
   }
 
@@ -46,28 +46,35 @@ const Form = () => {
   const changeHandler = (event) => {
     const property = event.target.name;
     const value = event.target.value;
-    // getSelectValues(select);
 
     validate({ ...form, [property]: value });
     setForm({ ...form, [property]: value });
   };
 
   const validate = (form) => {
-    
-    if (!form.difficulty) setErrors({...errors, difficulty: "Difficulty cannot be empty or 0"})
-    else setErrors({...errors, difficulty:""})
+    console.log(form);
 
-    if (form.countries==="") setErrors({...errors, countries:"Choose a Country"})
-    else setErrors({...errors, countries:""})
+    if(form.name === "") setErrores({...errores, name: "Name cannot be Empty"})
+    else if (form.name.length > 35 ) setErrores({...errores, name: "The name must have a maximum of 35 characters"})
+    else  if (!form.difficulty) setErrores({...errores, difficulty: "Difficulty cannot be empty or 0"})
+    else  if (form.countries==="") setErrores({...errores, countries:"Choose a Country"})
+    else if (typeof(form.duration) !== Number) setErrores({...errores, duration:"Put a Integer number"})
+    else  {
+          setErrores({...errores, name:"", difficulty:"", duration:"", countries:[]})
+          }
   };
 
 
   const submitHandler = (event) => {
     // form.countries=[form.countries]
-    console.log(form)
-
-    // event.preventDefault();
-    dispatch(postActivity(form))
+    // console.log(form)
+    if (form.countries==="" || form.name==="" || form.duration==="" || form.difficulty ==="" || form.season==="" || form.countries===[] ){
+      event.preventDefault();
+      alert("Fill in the empty fields")}
+    else {
+      // event.preventDefault();
+      dispatch(postActivity(form))
+    }
   };
 
 
@@ -86,11 +93,12 @@ const Form = () => {
           <hr />
           <div>
             <label htmlFor="name" className={style.label}>Name</label>
-            <div> <input type="text" id="name" name="name" className={style.input} value={form.name} onChange={changeHandler} required /></div>
+            <div> <input type="text" id="name" name="name" className={style.input} value={form.name} onChange={changeHandler}  /></div>
+              { <small> {errores.name} </small>} 
           </div>
           <div>
             <label htmlFor="season" className={style.label}>Season</label>
-            <div><select name="season" id="season-select" value={form.season} onChange={changeHandler}  className={style.select} required>
+            <div><select name="season" id="season-select" value={form.season} onChange={changeHandler}  className={style.select} >
                     <option value="">--Please choose an option--</option>
                     <option value="Summer">Summer</option>
                     <option value="Winter">Winter</option>
@@ -102,16 +110,17 @@ const Form = () => {
           <hr />
           <div>
             <label htmlFor="duration" className={style.label}>Duration</label>
-            <div><input type="number" min="1" max="24" id="duration" name="duration" value={form.duration} onChange={changeHandler} required className={style.duration}/>{"  "}HRS<br />
+            <div><input type="number" min="1" max="24" id="duration" name="duration" value={form.duration} onChange={changeHandler}  className={style.duration}/>{"  "}HRS<br />
               <small> Please insert duration in hours. Ex.→  2</small>
+              { <small> {errores.duration} </small>}
             </div>
           </div>
           <div>
             <label htmlFor="difficulty" className={style.label}>Difficulty</label>
-            <div><h4> <input required type='range' name="difficulty" onChange={changeHandler} min={1} max={5} step={1} value={form.difficulty} className={style.difficulty} />
+            <div><h4> <input  type='range' name="difficulty" onChange={changeHandler} min={1} max={5} step={1} value={form.difficulty} className={style.difficulty} />
               {"   "} {form.difficulty}</h4>
               <small> Please select between 1 to 5</small>
-              {errors.difficulty && <span>ER: {errors.difficulty} </span>}
+              {/* { <small> {errores.difficulty} </small>} */}
             </div>
           </div>
           <div>
@@ -119,7 +128,7 @@ const Form = () => {
             <div>
               {
                 <select id="countries" name="countries" onChange={handleChange2} className={style.select1}
-                multiple required>
+                multiple required >
                   {/* <option value="">--Please choose an option--</option> */}
                   {ordenar()}
                   {countries.map((country) => {
@@ -133,7 +142,10 @@ const Form = () => {
           </div>
           <div>
             <hr />
-            <div> <button type="submit" className={style.button}>Create!</button> </div>
+            
+            <div> 
+              <button type="submit" className={style.button} >Create!</button> 
+          </div>
           </div>
         </form>
       </div>

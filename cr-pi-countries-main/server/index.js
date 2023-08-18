@@ -5,7 +5,7 @@ const PORT = 3001;
 const { getApi } = require('./src/controllers/getApiInfo');
 
 
-// Syncing all the models at once.
+// sincroniza
 
 conn.sync({ alter: true }).then(() => {
   server.listen(PORT, () => {

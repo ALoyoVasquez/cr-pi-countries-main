@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { orderByName, orderByPopulation } from "../../redux/actions";
 import Card from "../Card/Card";
 import formatNumber from "../../views/formatNumber.js"
 import style from "./Cards.module.css";
-import { orderByName, orderByPopulation } from "../../redux/actions";
 import sortImg from "../../assets/sort_az2.png"
 import s_america from "../../assets/southAmerica.jpg"
 import n_america from "../../assets/northAmerica.jpg"
@@ -11,7 +11,7 @@ import europe from "../../assets/europe.jpg"
 import asia from "../../assets/asia.jpg"
 import oceania from "../../assets/oceania.jpg"
 import africa from "../../assets/africa.jpg"
-import antartica from "../../assets/antarctica.png"
+import antartica from "../../assets/antarctica.jpg"
 
 const Cards = (continente) => {
   //? Estado
@@ -22,7 +22,7 @@ const Cards = (continente) => {
   const dispatch = useDispatch();
 
   //? Paginado
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   let data = countries;
   const itemsPerPage = 10;
   const pageCount = Math.ceil(data.length / itemsPerPage); //? Calcula la cantidad de paginas de acuerdo al numero de paises
@@ -86,8 +86,7 @@ const Cards = (continente) => {
       <div className={style.containFo}>
         <img src={sortImg} alt="sort-icon" width="32px"/>
         &nbsp;&nbsp;&nbsp;
-        {/* <span className={style.h4}> ORDER → </span>
-        <img src={sortImg} alt="sort-icon" className = {style.icono} /> */}
+
         <div className={style.order}>
           <label htmlFor="select" className={style.h4}>POPULATION:{" "}</label>
           <label htmlFor="selectR" className={style.h5}>PEOPLE:{" "}</label>
@@ -110,7 +109,7 @@ const Cards = (continente) => {
         </div>
       </div>
       {/* //? Paginado */}
-            <div>
+            <div className={style.paginado}>
               <h2>
                 { currentPage > 0 
                   ? <button onClick={handleMoveGo} value={0} id="uno" name="uno" className={style.button2}> start </button>
@@ -133,8 +132,6 @@ const Cards = (continente) => {
             </div>
           {/* //? End-Paginado */}
 
-    
-
           <div className={style.containeP}>
 
             {countries.map((popul)=>{
@@ -150,8 +147,8 @@ const Cards = (continente) => {
             : (<div className={style.continen} >
                   <span className={style.info}> 
                   This is one of the 7 continents of the world.
-                  <br /> It has {countries.length} countries and its total population reaches {formatNumber(totalPeople)} inhabitants.
-                    <br />It also covers an area of {formatNumber(totalArea )} km2
+                    <br /> It has {countries.length} countries and its total population reaches {formatNumber(totalPeople)} inhabitants.
+                    <br /> It also covers an area of {formatNumber(totalArea )} km2
                   </span>
                   { continente.value==="South America"
                     ? <img src={s_america} alt="southAmerica" width="250px" />
@@ -171,7 +168,7 @@ const Cards = (continente) => {
                 </div>)
               }
 
-            <div className={style.container}>
+            <div className={continente.value ==="all" ? style.container : style.containerF}>  
               {selectedCountries.map((country) => {
                 return (
                   <Card

@@ -1,3 +1,4 @@
+
 export default function formatNumber(floatValue = 0, decimals = 0, multiplier = 1) {
     let floatMultiplied = floatValue * multiplier;
     let stringFloat = floatMultiplied + "";

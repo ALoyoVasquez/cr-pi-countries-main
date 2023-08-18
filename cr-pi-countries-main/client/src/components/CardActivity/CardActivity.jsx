@@ -19,14 +19,14 @@ const CardActivity = ({ id, name, season,  duration, difficulty, countries, pais
             {
               banderas.length > 1
               ?  (banderas.map((band)=>{
-                <h1>{pais}</h1>
-                //  {console.log(pais)}
-                //{<img src={band} alt="img" key={band} className={style.img} />} 
+                {<img src={band} alt="img" key={band} className={style.img} />} 
                  }) )
               : <img src={countries[0].flags} alt={countries} className={style.img} />
             }       
           </div>
           <div>
+            <span className={style.span}>| PAIS: </span>{" "}
+            <label className={style.labelN}>{pais} </label>
             <span className={style.span}>| NAME: </span>{" "}
             <label className={style.labelN}>{name}</label>
             <span className={style.span}>| SEASON: </span>{" "}

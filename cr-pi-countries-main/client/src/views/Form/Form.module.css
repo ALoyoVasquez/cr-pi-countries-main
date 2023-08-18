@@ -1,13 +1,15 @@
 .container{
-    /* background-color: rgb(255, 0, 0); */
-    width: 80%;
-    margin-top: 2%;
-    margin-left: 7%;
-    margin-right: 5%;
+    /* background-color: rgb(67, 212, 38); */
+    width: 90%;
+    margin: 0.5% 0.5% 5% 5%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    align-items: flex-start;
+
+    /* border: solid 1px;
+    border-radius: 2px ;
+    border-color: #999999; */
 }
 
 .container2{
@@ -16,7 +18,12 @@
     flex-direction: row ;
     justify-content: center;
     align-items: flex-start;
-    width: 50%;
+    border: solid 1px;
+    border-radius: 2px ;
+    border-color: #999999;
+    width: 40%;
+    padding: 0;
+    margin: 0.3%   ;
 }
 
 .input{
@@ -46,12 +53,16 @@
 }
 
 .duration{
-    height: 2rem;
+    height: 1.5rem;
     width: 17rem;
 }
 
 .actividad{
+    /* background-color: blue; */
     display: flex;
+    /* width: 55%; */
+    /* height: 100%; */
+
 }
 
 .actCol{
@@ -69,10 +80,11 @@
     /* background-color: blue; */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    /* justify-content: flex-start; */
+    width: 55%;
     padding: 0;
-    margin: 1%;
-    width: 50%;
+    margin: 0.5%;
 }
 
 .button{

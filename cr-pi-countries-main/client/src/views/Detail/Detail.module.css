@@ -5,25 +5,25 @@
     justify-content: center;
     align-items: center;
     margin-top: 2%;
-}
-
-.container2 {
+  }
+  
+  .container2 {
+  background: #FAFAFA;
   display: flex;
   flex-direction: row;
-
+  /* align-items: center; */
   border-radius: 3.23388rem;
-  background: #FAFAFA;
-/* Frame shadow */
+  /* Frame shadow */
   box-shadow: 40px 34px 94px 0px rgba(30, 40, 68, 0.25);
 }
 
 .detail{
   width: 30rem;
-  height: 30rem; 
+  height: 100%; 
   /* background-color: #2ee2a997; */
   display: flex;
   flex-direction: column;
-  justify-content:space-evenly;
+  justify-content:space-around;
   align-items: flex-start;
   /* margin: 1%; */
 }
