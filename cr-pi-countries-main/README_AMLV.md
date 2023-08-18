@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ![HenryLogo](./imgs/soyHenryLogo.png)
+=======
+![HenryLogo](http://math.prep.soyhenry.com/_src/assets/logo.png)
+>>>>>>> c7345188b215c0952a6a566b7f1978f1154885e3
 
 
 
@@ -7,6 +11,10 @@ Se creo una SPA para trabajar con Países y Actividades de acuerdo al País, la 
 Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos con la DB y así obtener todos los datos como también crear actividades.
 
 ## DIGRAMA DE FUNCIONAMIENTO DEL BACK
+<<<<<<< HEAD
+=======
+
+>>>>>>> c7345188b215c0952a6a566b7f1978f1154885e3
 ![DiagramBack](./imgs/diagramback.svg)
 
 
@@ -16,13 +24,17 @@ Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos 
 Acá podemos ver el flujo de como funciona la SPA de Countries.
 
 ## INSTRUCCIONES:
-La SPA corre en http://localhost:3001/
+La SPA corre en http://localhost:3000/
 Al Iniciar carga:
 
 ### 1. Landing Page
  Esta contiene una imagen referente al proyecto y un botón de “Enter” para acceder al home.
+<<<<<<< HEAD
 
  ![LandingPage](./imgs/landing.png)
+=======
+![Landing](./imgs/landing.png)
+>>>>>>> c7345188b215c0952a6a566b7f1978f1154885e3
 
 Luego de acceder al Home podrás ver:
 
@@ -36,7 +48,7 @@ Además, contiene 3 links principales:
 * **ABOUT ME** → Contiene una breve descripción de mi.
 
 ### HOME
-Al Entrar ingresa automáticamente el http://localhost:3001/home en esta vista podemos ver las tarjetas de todos los Países paginadas de 10 en 10.
+Al Entrar ingresa automáticamente el http://localhost:3000/home en esta vista podemos ver las tarjetas de todos los Países paginadas de 10 en 10.
 
 ![Cards](./imgs/cards.png)
 
