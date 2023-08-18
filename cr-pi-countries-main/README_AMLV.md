@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 ![HenryLogo](./imgs/soyHenryLogo.png)
-=======
-![HenryLogo](http://math.prep.soyhenry.com/_src/assets/logo.png)
->>>>>>> c7345188b215c0952a6a566b7f1978f1154885e3
+
+<!-- ![HenryLogo](http://math.prep.soyhenry.com/_src/assets/logo.png) -->
 
 
 
@@ -11,10 +9,6 @@ Se creo una SPA para trabajar con Países y Actividades de acuerdo al País, la 
 Se creo un servidor y rutas además de Handlers y Controllers para comunicarnos con la DB y así obtener todos los datos como también crear actividades.
 
 ## DIGRAMA DE FUNCIONAMIENTO DEL BACK
-<<<<<<< HEAD
-=======
-
->>>>>>> c7345188b215c0952a6a566b7f1978f1154885e3
 ![DiagramBack](./imgs/diagramback.svg)
 
 
@@ -29,13 +23,10 @@ Al Iniciar carga:
 
 ### 1. Landing Page
  Esta contiene una imagen referente al proyecto y un botón de “Enter” para acceder al home.
-<<<<<<< HEAD
 
  ![LandingPage](./imgs/landing.png)
 =======
 ![Landing](./imgs/landing.png)
->>>>>>> c7345188b215c0952a6a566b7f1978f1154885e3
-
 Luego de acceder al Home podrás ver:
 
 ### NAV BAR

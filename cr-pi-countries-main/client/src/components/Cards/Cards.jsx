@@ -22,7 +22,7 @@ const Cards = (continente) => {
   const dispatch = useDispatch();
 
   //? Paginado
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   let data = countries;
   const itemsPerPage = 10;
   const pageCount = Math.ceil(data.length / itemsPerPage); //? Calcula la cantidad de paginas de acuerdo al numero de paises
@@ -32,8 +32,8 @@ const Cards = (continente) => {
 
   let totalPeople=0;
   let totalArea=0;
-  // let continente="all";
 
+  
   const handleMoveLeft = (evt) => {
     data = countries;
 
@@ -50,7 +50,7 @@ const Cards = (continente) => {
     setCurrentPage(currentPage + 1);
     startIndex = currentPage * itemsPerPage;
     selectedCountries = data.slice(startIndex, startIndex + itemsPerPage);
-   
+    
     return selectedCountries;
   };
   
@@ -65,22 +65,24 @@ const Cards = (continente) => {
     return selectedCountries;
   };
   //?Fin Paginado
-
+  
   //? Order
   const handleOrderP = (e) => {
+    setCurrentPage(0);
     dispatch(orderByPopulation(e.target.value));
-
+    
     if (!order) setOrder(true);
     else setOrder(false);
   };
-
+  
   const handleOrderN = (e) => {
+    setCurrentPage(0);
     dispatch(orderByName(e.target.value));
-
+    
     if (!order) setOrder(true);
     else setOrder(false);
   };
-
+  
   return (
     <>
       <div className={style.containFo}>
@@ -144,13 +146,13 @@ const Cards = (continente) => {
 
             { continente.value ==="all" 
             ? console.log("no muestra nada")
-            : (<div className={style.continen} >
+            : ( <div className={style.continen} >
                   <span className={style.info}> 
                   This is one of the 7 continents of the world.
                     <br /> It has {countries.length} countries and its total population reaches {formatNumber(totalPeople)} inhabitants.
                     <br /> It also covers an area of {formatNumber(totalArea )} km2
                   </span>
-                  { continente.value==="South America"
+                  {continente.value==="South America"
                     ? <img src={s_america} alt="southAmerica" width="250px" />
                     : continente.value==="North America"
                     ? <img src={n_america} alt="northAmerica" /> 

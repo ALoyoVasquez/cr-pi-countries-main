@@ -29,7 +29,7 @@ const Home = () => {
   const handleFilterByContinent = (event) => {
     dispatch(filterCountryByContinent(event.target.value));
     setContinente(event.target.value);
-    console.log(event.target.value);
+    // console.log(event.target.value);
     if (aux) setAux(true);
     else setAux(false);
   };

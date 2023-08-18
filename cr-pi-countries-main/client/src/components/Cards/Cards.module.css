@@ -161,7 +161,8 @@ button[disabled]{
 .paginado{
   background-color: rgba(0, 255, 255, 0);
 }
-/* @media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 767px) {
 
   .container{
     background-color: rgba(128, 128, 128, 0.050);
@@ -171,12 +172,12 @@ button[disabled]{
     justify-content: center;
     padding: 0;
     /* margin: 1% 2% 2% 4%;   */
-  /* }
+   }
   
-  .containFo{ */
+  .containFo{ 
     /* background-color: rgba(131, 19, 19, 0.349)  ; */
     /* background-color: rgba(37, 9, 194, 0.15); */
-    /* width: 94.5%;
+    /* width: 94.5%;  */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -185,9 +186,9 @@ button[disabled]{
     height: 2rem;
   }
   
-  .order{ */
+  .order{ 
     /* background-color: rgba(255, 145, 0, 0.767); */
-    /* height: fit-content;
+    height: fit-content;
   }
 
   .select{
@@ -195,8 +196,8 @@ button[disabled]{
     height: 1.5rem;
     font-size: x-small;
   }
-  .h4{ */
-    /* visibility: hidden;
+  .h4{ 
+    visibility: hidden;
   }
   .h5{
     visibility: visible;
@@ -204,5 +205,6 @@ button[disabled]{
   .icono{
     visibility: visible;
     height: 28px;
-  } */
+  } 
+} 
  
