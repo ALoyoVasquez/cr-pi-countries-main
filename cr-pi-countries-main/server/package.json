@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Server Proyecto Individual",
   "main": "index.js",
-  "type": "module",
 
   "scripts": {
     "server": "nodemon index.js",
