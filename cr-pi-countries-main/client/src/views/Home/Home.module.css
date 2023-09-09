@@ -34,6 +34,7 @@
   }
   
   .filter{
+    /* background-color: blue; */
     display: flex;
     flex-direction: row;
     height: fit-content;
@@ -60,11 +61,14 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    /* margin: ; */
   }
 
   .tarjeta{
-    background-color: rgba(155, 85, 190, 0);
-    /* display: flex; */
+    /* background-color: rgba(139, 33, 192, 0.849); */
+    width: 100%  ;
+    /* display: flex;
+    flex-wrap: wrap; */
     /* align-items: center; */
   }
   

@@ -1,25 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { orderByName, orderByPopulation } from "../../redux/actions";
+import { getAllActivities, getAllCountries } from "../../redux/actions";
+import { filterCountryByContinent, filterCountryByActivity } from "../../redux/actions";
 import Card from "../Card/Card";
 import formatNumber from "../../views/formatNumber.js"
 import style from "./Cards.module.css";
-import sortImg from "../../assets/sort_az2.png"
-import s_america from "../../assets/southAmerica.jpg"
-import n_america from "../../assets/northAmerica.jpg"
-import europe from "../../assets/europe.jpg"
-import asia from "../../assets/asia.jpg"
-import oceania from "../../assets/oceania.jpg"
-import africa from "../../assets/africa.jpg"
-import antartica from "../../assets/antarctica.jpg"
+//? IMGS INFO CONTINENTE, filter and sort
+import { s_america, n_america, europe, asia, oceania, africa, antartica, sortImg, filterImg} from "../../assets/index.js";
 
-const Cards = (continente) => {
+
+
+const Cards = () => {
+
   //? Estado
   const countries = useSelector((state) => state.countries);
-
+  const activities = useSelector((state) => state.activities);
+  
   //? Order
   const [order, setOrder] = useState(false);
   const dispatch = useDispatch();
+  const [aux, setAux] = useState(false);
+  const [continente, setContinente] = useState("all") 
+
+  //? Dispatch al cargar--- Llena todos los paises
+  useEffect(() => {
+    dispatch(getAllCountries());
+  }, [aux, dispatch]);
+
+  // //? Cargar las actividades en el Select
+  useEffect(() => {
+    dispatch(getAllActivities());
+  }, []);
+
 
   //? Paginado
   const [currentPage, setCurrentPage] = useState(0);
@@ -29,10 +42,8 @@ const Cards = (continente) => {
   let startIndex = currentPage * itemsPerPage;
   let selectedCountries = data.slice(startIndex, startIndex + itemsPerPage);
 
-
   let totalPeople=0;
   let totalArea=0;
-
   
   const handleMoveLeft = (evt) => {
     data = countries;
@@ -53,7 +64,6 @@ const Cards = (continente) => {
     
     return selectedCountries;
   };
-  
   
   const handleMoveGo = (event) => {
     
@@ -81,6 +91,22 @@ const Cards = (continente) => {
     
     if (!order) setOrder(true);
     else setOrder(false);
+  };
+
+  const handleFilterByContinent = (event) => {
+    setCurrentPage(0);
+    dispatch(filterCountryByContinent(event.target.value));
+    setContinente(event.target.value);
+    console.log(event.target.value);
+    if (aux) setAux(true);
+    else setAux(false);
+  };
+
+  const handleFilterByActivity = (event) => {
+    setCurrentPage(0);
+    dispatch(filterCountryByActivity(event.target.value));
+    if (aux) setAux(true);
+    else setAux(false);
   };
   
   return (
@@ -110,17 +136,51 @@ const Cards = (continente) => {
           </div>
         </div>
       </div>
+
+      <div  className={style.containFo}>
+        <img src={filterImg} alt="filter-icon" height="32px" />
+        &nbsp;&nbsp;&nbsp;
+
+          <div className={style.filter}>
+            <label htmlFor="select" className={style.h4}> ACTIVITY </label>
+            <label htmlFor="select" className={style.h5}> ACTIVITY→{" "} </label>
+              {
+                <select id="activity" name="activity" className={style.select} onChange={handleFilterByActivity}>
+                  <option value="all">All</option>
+                  {activities.map((actividad) => {
+                    return (<option key={actividad.id} value={actividad.name}> {actividad.name} </option> );
+                  })}
+                </select>
+              }
+          </div>
+
+          <div className={style.filter}>
+          <label htmlFor="select" className={style.h4}> CONTINENT </label>
+          <label htmlFor="select" className={style.h5}> CONTINENT: </label>
+          <select onChange={handleFilterByContinent} className={style.select} >
+              <option value="all">All</option>
+              <option value="Asia">Asia</option>
+              <option value="Africa">Africa</option>
+              <option value="Antarctica">Antarctica</option>
+              <option value="Europe">Europe</option>
+              <option value="North America">North America</option>
+              <option value="South America">South America</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </div>
+      </div>
+
       {/* //? Paginado */}
             <div className={style.paginado}>
               <h2>
                 { currentPage > 0 
-                  ? <button onClick={handleMoveGo} value={0} id="uno" name="uno" className={style.button2}> start </button>
+                  ? <button onClick={handleMoveGo} value={0} id="uno" name="uno" className={style.button2}>          start </button>
                   : <button onClick={handleMoveGo} value={0} id="uno" name="uno" className={style.button2} disabled> start </button>
                 }
                 { currentPage > 0 
                 ? ( <button onClick={handleMoveLeft} id="prev" name="pre" className={style.button}         > {currentPage}{" <"} </button> )
                 : ( <button onClick={handleMoveLeft} id="prev" name="pre" className={style.button} disabled> {currentPage}{" <"} </button> )
-              }
+                } 
                 {"  "} {currentPage + 1} {"  "}
                 { currentPage < pageCount - 1 
                   ? ( <button onClick={handleMoveRight} id="next" name="next" className={style.button} >         {"> "}{currentPage+2}</button>)
@@ -135,16 +195,13 @@ const Cards = (continente) => {
           {/* //? End-Paginado */}
 
           <div className={style.containeP}>
-
             {countries.map((popul)=>{
               totalPeople=totalPeople+popul.population
               totalArea = totalArea+popul.area
               })
             }
-            {/* {console.log(continente)}
-              {console.log(continente.value)} */}
 
-            { continente.value ==="all" 
+            { continente ==="all" 
             ? console.log("no muestra nada")
             : ( <div className={style.continen} >
                   <span className={style.info}> 
@@ -152,25 +209,20 @@ const Cards = (continente) => {
                     <br /> It has {countries.length} countries and its total population reaches {formatNumber(totalPeople)} inhabitants.
                     <br /> It also covers an area of {formatNumber(totalArea )} km2
                   </span>
-                  {continente.value==="South America"
-                    ? <img src={s_america} alt="southAmerica" width="250px" />
-                    : continente.value==="North America"
-                    ? <img src={n_america} alt="northAmerica" /> 
-                    : continente.value === "Africa"
-                    ? <img src={africa} alt="Africa" />
-                    : continente.value === "Europe"
-                    ? <img src={europe} alt="Europe" />
-                    : continente.value === "Antarctica"
-                    ? <img src={antartica} alt="Antarctica" />
-                    : continente.value === "Asia"
-                    ? <img src={asia} alt="Asia" />
+                  //? Imgs Lateral Bar 
+                  {continente==="South America"     ? <img src={s_america} alt="southAmerica"/>
+                    : continente==="North America"  ? <img src={n_america} alt="northAmerica" /> 
+                    : continente === "Africa"       ? <img src={africa} alt="Africa" />
+                    : continente === "Europe"       ? <img src={europe} alt="Europe" />
+                    : continente === "Antarctica"   ? <img src={antartica} alt="Antarctica" />
+                    : continente === "Asia"         ? <img src={asia} alt="Asia" />
                     : <img src={oceania} alt="oceania" /> 
-                    // : console.log("nin")
                   }   
-                </div>)
-              }
+                </div>
+              )
+            }
 
-            <div className={continente.value ==="all" ? style.container : style.containerF}>  
+            <div className={continente ==="all" ? style.container : style.containerF}>  
               {selectedCountries.map((country) => {
                 return (
                   <Card

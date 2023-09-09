@@ -16,17 +16,18 @@ const CardActivity = ({ id, name, season,  duration, difficulty, countries, pais
       {name ? (
         <div className={style.container1}>
           <div className={style.flag}>
-            {
-              banderas.length > 1
+            <img src= { banderas.map(flag => flag) } alt="+1Flags" key={banderas.map(flag => flag)} className={style.img} />
+            {/* {banderas.length > 1
               ?  (banderas.map((band)=>{
-                {<img src={band} alt="img" key={band} className={style.img} />} 
-                 }) )
-              : <img src={countries[0].flags} alt={countries} className={style.img} />
-            }       
+
+                     }))
+              :<img src={countries[0].flags} alt={countries} className={style.img} />
+            } */}
+            
           </div>
           <div>
             <span className={style.span}>| PAIS: </span>{" "}
-            <label className={style.labelN}>{pais} </label>
+            <label className={style.labelN}> { pais.map(element => element+" ")}</label>
             <span className={style.span}>| NAME: </span>{" "}
             <label className={style.labelN}>{name}</label>
             <span className={style.span}>| SEASON: </span>{" "}
